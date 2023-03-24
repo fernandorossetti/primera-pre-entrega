@@ -13,6 +13,12 @@
   }
 }
 
+.navbar-center {
+  position: relative;
+  left: 50%;
+  transform: translatex(-50%);
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
