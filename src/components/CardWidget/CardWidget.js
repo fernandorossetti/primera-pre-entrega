@@ -1,6 +1,4 @@
 import cart from './assets/cart.png';
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
 import NavLink from 'react-bootstrap/esm/NavLink';
 
 const CardWidget = () =>{
