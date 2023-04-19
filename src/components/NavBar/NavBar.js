@@ -6,7 +6,7 @@ import Navbar from 'react-bootstrap/Navbar';
 const NavBar = () => {
     return (
 
-        <Navbar bg="dark" variant="dark">
+        <Navbar bg="secondary" variant="dark">
         <Container>
           <Navbar.Brand className="navbar-center">
             <h3>Tecno Phone</h3>
