@@ -1,25 +1,34 @@
 import { useState } from "react";
 
-const ItemCount = () => {
-    const [counter, setCount] = useState(0);
-  
+const ItemCount = ({initial, stock, onAdd}) => {
+    const [quantity, setQueantity] = useState(initial);
+
     const increment = () => {
-      setCount(counter + 1);
-    };
-  
+        if (quantity < stock) {
+            setQueantity(quantity + 1)
+        }
+    }
+
     const decrement = () => {
-      setCount(counter - 1);
-    };
-  
-    const reset = () => {
-      setCount(0);
-    };
-  
-    return {
-      counter,
-      increment,
-      decrement,
-      reset
-    };
-  }
-export default ItemCount
+        if (quantity > 1) {
+            setQueantity(quantity - 1)
+        }
+    }
+
+    return(
+        <div>
+            <div>
+                <button onClick={decrement}>-</button>
+                <h3>{quantity}</h3>
+                <button onClick={increment}>+</button>
+            </div>
+            <div>
+                <button onClick={() => onAdd(quantity)} disabled={!stock}>
+                    Agregar al carrito
+                </button>
+            </div>
+        </div>
+    )
+}
+
+export default ItemCount;
