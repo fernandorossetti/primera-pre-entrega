@@ -12,7 +12,7 @@ const ItemListContainer = ({ gretting }) => {
                 setProducts(response)
             })
             .catch(error => {
-                console.log(error)
+                console.error(error)
             }) 
     }, [])
 
