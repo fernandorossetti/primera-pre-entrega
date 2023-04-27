@@ -6,6 +6,8 @@ import { ListGroup, ListGroupItem} from 'react-bootstrap';
 const Item = ({id, name, price, img, stock}) => {
 
     return(
+      <div>
+        <br/>
     <Row className='justify-content-center align-items-center minh-100'>
       <Card style={{ width: '18rem' }} >
                 <Card.Img variant='top' src={img} alt={name} />
@@ -21,6 +23,7 @@ const Item = ({id, name, price, img, stock}) => {
         </Card.Footer>
       </Card>
     </Row>
+    </div>
     )
 }
 

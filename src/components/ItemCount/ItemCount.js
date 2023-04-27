@@ -1,4 +1,7 @@
 import { useState } from "react";
+import Button from 'react-bootstrap/Button';
+import ButtonGroup from 'react-bootstrap/ButtonGroup';
+import ButtonToolbar from 'react-bootstrap/ButtonToolbar';
 
 const ItemCount = ({initial, stock, onAdd}) => {
     const [quantity, setQueantity] = useState(initial);
@@ -17,16 +20,21 @@ const ItemCount = ({initial, stock, onAdd}) => {
 
     return(
         <div>
-            <div>
-                <button onClick={decrement}>-</button>
-                <h3>{quantity}</h3>
-                <button onClick={increment}>+</button>
-            </div>
-            <div>
-                <button onClick={() => onAdd(quantity)} disabled={!stock}>
-                    Agregar al carrito
-                </button>
-            </div>
+        <ButtonToolbar className="mb-3, justify-content-center align-items-center" aria-label="Toolbar with Button groups">
+            <ButtonGroup className="me-2" aria-label="First group">
+                <Button onClick={decrement}>-</Button>
+            </ButtonGroup>
+            <h3>{quantity}</h3>
+            <ButtonGroup className="me-2" aria-label="Second group">
+                <Button onClick={increment}>+</Button>
+            </ButtonGroup>
+        </ButtonToolbar>
+        <br/>
+        <ButtonToolbar className="justify-content-center" aria-label="Toolbar with Button groups">
+            <Button onClick={() => onAdd(quantity)} disabled={!stock}>
+            Agregar al carrito
+            </Button>
+        </ButtonToolbar>
         </div>
     )
 }
