@@ -5,16 +5,16 @@ import ListGroup from 'react-bootstrap/ListGroup';
 import { ListGroupItem, Row } from 'react-bootstrap';
 import { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { CartContext } from '../../context/CartContext';
+import { CartContext } from '../../Context/CartContext';
 
 const ItemDetail = ({id, name, price, img, stock, category, description}) => {
 
-    const [quantityAdd, setQuantityAdd] = useState(0);
+    const [quantityAdded, setQuantityAdded] = useState(0);
 
     const { addItem } = useContext(CartContext)
 
     const handleOnAdd = (quantity) => {
-        setQuantityAdd(quantity);
+        setQuantityAdded(quantity);
 
         const item = {
             id, name, price
@@ -37,7 +37,7 @@ const ItemDetail = ({id, name, price, img, stock, category, description}) => {
                 </ListGroup> 
                 <Card.Footer>
                     {
-                        quantityAdd > 0 ? (
+                        quantityAdded > 0 ? (
                             <Button style={{backgroundColor:'darkgray'}}><Link to={'/cart'} className='Option'> Terminar Compra </Link></Button>
                         ) : (
                         <ItemCount initial={1} stock={stock} onAdd={handleOnAdd}></ItemCount>

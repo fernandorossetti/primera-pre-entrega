@@ -1,0 +1,5 @@
+.carrito{
+    display: flex;
+    align-items:flex-end;
+    background-color: antiquewhite;
+}

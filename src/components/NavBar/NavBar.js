@@ -1,9 +1,9 @@
 import { Button } from "react-bootstrap";
-import CardWidget from "../CardWidget/CardWidget";
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { Link, NavLink } from "react-router-dom";
+import CartWidget from "../CartWidget/CartWidget"
 
 
 const NavBar = () => {
@@ -21,7 +21,7 @@ const NavBar = () => {
             <Button variant="link"><NavLink to={`/category/iPhone`} className={({isActive}) => isActive ? 'ActiveOption' : 'Option'}>iPhone</NavLink></Button>{' '}
             <Button variant="link"><NavLink to={`/category/MacBook`} className={({isActive}) => isActive ? 'ActiveOption' : 'Option'}>MacBook</NavLink></Button>{' '}
             <Button variant="link"><NavLink to={`/category/Accesorios`} className={({isActive}) => isActive ? 'ActiveOption' : 'Option'}>Accesorios</NavLink></Button>{' '}
-            <CardWidget />
+            <CartWidget></CartWidget>
           </Nav>
         </Container>
       </Navbar>
