@@ -5,7 +5,7 @@ import ListGroup from 'react-bootstrap/ListGroup';
 import { ListGroupItem, Row } from 'react-bootstrap';
 import { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { CartContext } from '../../Context/CartContext';
+import { CartContext } from '../../context/CartContext';
 
 const ItemDetail = ({id, name, price, img, stock, category, description}) => {
 
